@@ -125,7 +125,8 @@ func (fp flagProvider) setFlagCallbacks(field reflect.StructField) error {
 func (fp flagProvider) Provide(field reflect.StructField, v reflect.Value) error {
 	fd, err := fp.getFlagData(field)
 	if err != nil {
-		return err
+		//return err
+		return
 	}
 
 	fn := fp.flagsValues[fd.key]
