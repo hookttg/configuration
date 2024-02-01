@@ -51,7 +51,8 @@ func (fp fileProvider) Provide(field reflect.StructField, v reflect.Value) error
 	path := field.Tag.Get("file_json")
 	if len(path) == 0 {
 		// field doesn't have a proper tag
-		return fmt.Errorf("%s: key is empty", JSONFileProviderName)
+		//return fmt.Errorf("%s: key is empty", JSONFileProviderName)
+		return
 	}
 
 	valStr, ok := findValStrByPath(fp.fileData, strings.Split(path, "."))
