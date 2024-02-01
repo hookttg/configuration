@@ -25,7 +25,8 @@ func (defaultProvider) Init(_ any) error {
 func (dp defaultProvider) Provide(field reflect.StructField, v reflect.Value) error {
 	valStr := field.Tag.Get("default")
 	if len(valStr) == 0 {
-		return fmt.Errorf("defaultProvider: %w", ErrEmptyValue)
+		//return fmt.Errorf("defaultProvider: %w", ErrEmptyValue)
+		return
 	}
 
 	return SetField(field, v, valStr)
